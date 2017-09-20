@@ -1,0 +1,20 @@
+module.exports = {
+  happened: function (req, res) {
+    Habit.findOne({id: req.param('habit')}).exec(function(err, habit){
+      habit.occurence++;
+      habit.save(function(err){
+        return res.json(habit);
+      });
+    });
+  }
+};/**
+ * HabitController
+ *
+ * @description :: Server-side logic for managing habits
+ * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
+ */
+
+module.exports = {
+	
+};
+
